@@ -1,0 +1,27 @@
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <g class="tools-protractor">
+    <style>
+      circle[name="line-l-hit"], circle[name="line-r-hit"], circle[name="middle-hit"] {
+        pointer-events: all; cursor: pointer;
+      }
+    </style>
+    <defs>
+      <marker id=":angle-arrow-0" markerWidth="12" markerHeight="12" refX="10" refY="5" orient="auto">
+        <path name="arc-ang-marker-0" d="M2,7 L10,5 L2,1" fill="none" stroke="#00ff00" />
+      </marker>
+      <marker id=":angle-arrow-1" markerWidth="12" markerHeight="12" refX="10" refY="5" orient="auto">
+        <path name="arc-ang-marker-1" d="M2,9 L10,5 L2,3" fill="none" stroke="#00ff00" />
+      </marker>
+    </defs>
+    <line name="line-l" x1="0" y1="0" x2="20" y2="20" stroke="#c800c8" stroke-width="2" shape-rendering="geometricPrecision"></line>
+    <line name="line-r" x1="0" y1="0" x2="20" y2="20" stroke="#c800c8" stroke-width="2" shape-rendering="geometricPrecision"></line>
+    <circle name="line-l" cx="0" cy="0" r="4" stroke="#00ff00" stroke-width="2" fill="none" shape-rendering="geometricPrecision"></circle>
+    <circle name="line-r" cx="0" cy="0" r="4" stroke="#00ff00" stroke-width="2" fill="none" shape-rendering="geometricPrecision"></circle>
+    <circle name="middle" cx="0" cy="0" r="4" stroke="#00ff00" stroke-width="2" fill="none" shape-rendering="geometricPrecision"></circle>
+    <path name="arc-ang" d="M200 175 A 25 25 0 0 0 182.322 217.678" fill="none" stroke="#00ff00" stroke-width="1" shape-rendering="geometricPrecision" marker-end="url(#:angle-arrow-0)"></path>
+    <text name="arc-title" x="200" y="200" font-family="Arial" font-size="12px" fill="red" text-anchor="middle" dominant-baseline="middle"></text>
+    <circle name="line-l-hit" cx="0" cy="0" r="8" stroke="none" fill="#ffffff" fill-opacity="0" shape-rendering="geometricPrecision"></circle>
+    <circle name="line-r-hit" cx="0" cy="0" r="8" stroke="none" fill="#ffffff" fill-opacity="0" shape-rendering="geometricPrecision"></circle>
+    <circle name="middle-hit" cx="0" cy="0" r="8" stroke="none" fill="#ffffff" fill-opacity="0" shape-rendering="geometricPrecision"></circle>
+  </g>
+</svg>

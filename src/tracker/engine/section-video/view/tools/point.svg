@@ -1,0 +1,7 @@
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <g class="point-place">
+    <circle cx="0" cy="0" r="4" stroke="#c800c8" stroke-width="2" shape-rendering="geometricPresicion" stroke-opacity="0.3" fill="none"></circle>
+    <line x1="-6" y1="-6" x2="6" y2="6" stroke="#c800c8" stroke-width="1" shape-rendering="crispEdges"></line>
+    <line x1="-6" y1="6" x2="6" y2="-6" stroke="#c800c8" stroke-width="1" shape-rendering="crispEdges"></line>
+  </g>
+</svg>

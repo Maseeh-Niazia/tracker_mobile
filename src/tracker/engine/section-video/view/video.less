@@ -1,0 +1,282 @@
+@import './controls/seek-bar.less';
+
+@font-face {
+  font-family: 'Video Controls Icon';
+  src: url('./controls/controls.woff') format('woff');
+}
+
+@toolbar-size: 34px;
+@current-state-width: 50px;
+@play-rate-value-width: 40px;
+
+@button-margin: 4px;
+@button-width: calc( @toolbar-size - @button-margin - @button-margin );
+@button-height: calc( @toolbar-size - @button-margin - @button-margin );
+
+@label-padding-top: 10px;
+@label-height: calc( @toolbar-size - @label-padding-top );
+
+@video-controls-width-total: 285px;
+@video-bttn-touch-shift-width: 60px;
+@video-controls-width-with-shift: @video-controls-width-total + ( @video-bttn-touch-shift-width +  @button-margin + @button-margin );
+
+@video-bttn-hover-color: #fddd7f;
+
+@display-state-width: 70px;
+
+.video {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  text-align: left;
+}
+
+.video .video-holder {
+  height: calc( ~'100% - @{toolbar-size}' );
+  text-align: center;
+  position: relative;
+}
+
+.video .video-holder .video-frame {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+}
+
+.video .video-holder .video-frame > svg {
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.video .video-holder .video-tools {
+  position: absolute;
+  background: none;
+  left: 0px;
+  top: 0px;
+  overflow: hidden;
+}
+
+.video .video-holder .video-frame > img {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.video .video-holder .video-frame > .video-objects {
+  position: absolute;
+  z-index: 2000;
+  left: 0px;
+  top: 0px;
+}
+
+.video .video-holder .video-frame > .video-objects .video-object {
+  cursor: pointer;
+}
+
+.video .video-controls {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: @toolbar-size;
+  background: #969696;
+}
+
+.video > .video-controls > .play-rate {
+  display: inline-block;
+}
+
+.video > .video-controls > .play-rate > .play-rate-value {
+  padding-top: @label-padding-top;
+  height: @label-height;
+  display: inline-block;
+  font-family: Arial;
+  font-size: 14px;
+  width: @play-rate-value-width;
+  text-align: center;
+  display: inline-block;
+  color: #fff;
+  vertical-align: bottom;
+}
+
+.video > .video-controls > .seek-bar {
+  width: calc( ~'100% - @{video-controls-width-total}' );
+  display: inline-block;
+  height: @toolbar-size;
+  vertical-align: bottom;
+  margin: 0;
+  background: none;
+  padding: 0px;
+}
+
+.video > .video-controls > .seek-bar.has-shift-button {
+  width: calc( ~'100% - @{video-controls-width-with-shift}' );
+}
+
+.video > .video-controls button {
+  width: @button-width;
+  height: @button-height;
+  border: none;
+  outline: none;
+  margin: @button-margin;
+  padding: 0;
+  cursor: pointer;
+  vertical-align: bottom;
+  font-family: 'Video Controls Icon';
+  font-size: 16px;
+  background: none;
+}
+
+.video > .video-controls > .play-rate > button {
+  margin-left: 0;
+  margin-right: 0;
+  width: calc( ~'@{toolbar-size} - 10px' );
+}
+
+.video > .video-controls button:not(:disabled):hover:before {
+  color: @video-bttn-hover-color;
+}
+
+.video > .video-controls button:before {
+  position: relative;
+  top: 4px;
+  color: #fff;
+  font-size: 20px;
+}
+
+.video > .video-controls button:disabled {
+  cursor: default;
+}
+
+.video > .video-controls button:disabled:before {
+  color: #cccccc;
+}
+
+.video > .video-controls > .play-back:before {
+  content: 'c';
+}
+
+.video > .video-controls > .play-back:before {
+  content: 'c';
+}
+
+.video > .video-controls > .play-start:before {
+  content: 'b';
+}
+
+.video > .video-controls > .play-pause:before {
+  content: 'a';
+}
+
+.video > .video-controls > .skip-prev:before {
+  content: 'g';
+}
+
+.video > .video-controls > .skip-next:before {
+  content: 'e';
+}
+
+.video > .video-controls > .play-loop:before {
+  content: 'f';
+}
+
+.video > .video-controls > .play-loop.loop-on:before {
+  color: blue;
+}
+
+.video > .video-controls > .play-rate > .play-rate-prev:before {
+  content: 'h';
+}
+
+.video > .video-controls > .play-rate > .play-rate-next:before {
+  content: 'i';
+}
+
+.video > .video-controls > .touch-shift {
+  border: 2px solid #fff;
+  vertical-align: top;
+  width: @video-bttn-touch-shift-width;
+}
+
+.video > .video-controls > .touch-shift:hover {
+  border: 2px solid @video-bttn-hover-color;
+}
+
+.video > .video-controls > .touch-shift:active,
+.video > .video-controls > .touch-shift.active {
+  border: 2px solid lawngreen;
+}
+
+.video > .video-controls > .touch-shift:hover:active:before,
+.video > .video-controls > .touch-shift:hover.active:before,
+.video > .video-controls > .touch-shift.active:before {
+  color: lawngreen;
+}
+
+.video > .video-controls > .touch-shift:before {
+  content: 'SHIFT';
+  font-family: Arial;
+  font-size: 14px;
+  position: relative;
+  top: -1px;
+  font-weight: bold;
+}
+
+/* display state */
+
+.video > .video-controls > .current-state {
+  margin: @button-margin;
+  height: @button-height;
+  font-family: Arial;
+  font-size: 14px;
+  width: @current-state-width;
+  text-align: center;
+  display: inline-block;
+  font-weight: bold;
+  color: #fff;
+  vertical-align: bottom;
+}
+
+.video > .video-controls > .current-state > .menu-choose-display {
+  position: absolute;
+  bottom: @toolbar-size;
+  left: 25px;
+  text-align: left;
+  width: @display-state-width;
+  padding: 2px 4px;
+  background: #eeeeee;
+  font-weight: normal;
+  color: black;
+  box-shadow: 1px 1px 2px grey;
+  z-index: 5000;
+}
+
+.video > .video-controls > .current-state > .menu-choose-display > label {
+  display: inline-block;
+  font-size: 12px;
+  width: 100%;
+  padding: 2px 0;
+}
+
+.video > .video-controls > .current-state > .menu-choose-display > label:hover:not(.selected) {
+  background: #a3b8cc;
+  cursor: pointer;
+}
+
+.video > .video-controls > .current-state > .menu-choose-display > label:before {
+  font-family: 'Video Controls Icon';
+  font-size: 16px;
+  display: inline-block;
+  content: '';
+  width: 20px;
+}
+
+.video > .video-controls > .current-state > .menu-choose-display > label.selected:before {
+  position: relative;
+  top: 3px;
+  content: 'j';
+}

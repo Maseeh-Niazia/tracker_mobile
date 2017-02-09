@@ -1,0 +1,77 @@
+@header-height: 32px;
+@button-color-normal: #3c3c3c;
+@button-color-hover: #fd7f7f;
+@button-border: 1px solid #7a8a99;
+@button-box-shadow: inset 0 0 2px #7a8a99;
+@menu-button-bg-hover: #a3b8cc;
+
+@font-face {
+  font-family: 'Panel Controls Icon';
+  src: url('./panel-icons.woff') format('woff');
+}
+
+@import './controls/menu-select-view';
+@import './controls/menu-select-object';
+
+.frame-panel {
+  width: 100%;
+  height: 100%;
+}
+
+.frame-panel-content {
+  width: 100%;
+  height: calc( ~'100% - @{header-height}');
+  overflow: auto;
+}
+
+.frame-panel-header {
+  text-align: left;
+  width: 100%;
+  height: @header-height;
+  position: relative;
+  background: -moz-linear-gradient(top, #ffffff 0%, #dddddd 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#dddddd)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #ffffff 0%,#dddddd 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #ffffff 0%,#dddddd 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, #ffffff 0%,#dddddd 100%); /* IE10+ */
+  background: linear-gradient(to bottom, #ffffff 0%,#dddddd 100%); /* W3C */
+}
+
+.frame-panel-header > .frame-panel-title {
+  float: right;
+  display: inline-block;
+  //margin-right: calc( ~'50% - 30px' );
+  margin-right: 25px;
+  margin-top: 8px;
+  width: 60px;
+  text-align: center;
+  font-Family: Arial;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+/* view parameters */
+
+.frame-panel-header > .bttn-view-parameters {
+  text-align: center;
+  width: 50px;
+  height: @header-height - 6px;
+  background: transparent;
+  border: @button-border;
+  outline: none;
+  box-shadow: @button-box-shadow;
+  vertical-align: middle;
+}
+
+.frame-panel-header > .bttn-view-parameters > span {
+    display: block;
+    padding-bottom: 2px;
+}
+
+.frame-panel-header > .bttn-view-parameters[current="table"] {
+  cursor: pointer;
+}
+
+.frame-panel-header > .bttn-view-parameters[current="table"]:hover {
+  color: @button-color-hover;
+}

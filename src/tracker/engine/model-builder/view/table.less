@@ -1,0 +1,83 @@
+@mb-panel-table-margin: 2px;
+@mb-panel-table-thead-border: 1px solid #7a8a99;
+@mb-panel-table-tbody-border: 1px solid #999999;
+@mb-panel-table-input-border-width: 1px;
+@mb-panel-table-input-border: @mb-panel-table-input-border-width inset #a9a9a9;
+
+.tracker > .mb > .mb-c > .mb-panel-cover > .mb-panel > table {
+  padding: 0;
+  border-spacing: 0px;
+  border: 1px solid grey;
+  margin: @mb-panel-table-margin;
+  width: calc(~'100% - @{mb-panel-table-margin} - @{mb-panel-table-margin}');
+}
+
+/* head */
+
+.tracker > .mb > .mb-c > .mb-panel-cover > .mb-panel > table > thead {
+  background: #dddddd;
+}
+
+.tracker > .mb > .mb-c > .mb-panel-cover > .mb-panel > table > thead > tr > td {
+  text-align: center;
+  border-bottom: @mb-panel-table-thead-border;
+}
+
+.tracker > .mb > .mb-c > .mb-panel-cover > .mb-panel > table > thead > tr > td:not(:first-child) {
+  border-left: @mb-panel-table-thead-border;
+}
+
+/* body */
+
+.tracker > .mb > .mb-c > .mb-panel-cover > .mb-panel > table > tbody > tr > td {
+  width: 50%;
+  border-bottom: @mb-panel-table-tbody-border;
+}
+
+.tracker > .mb > .mb-c > .mb-panel-cover > .mb-panel > table > tbody > tr.active {
+  background: #00ccff; 
+}
+
+.tracker > .mb > .mb-c > .mb-panel-cover > .mb-panel > table > tbody > tr > td > label {
+  padding: 0 2px;
+}
+
+.tracker > .mb > .mb-c > .mb-panel-cover > .mb-panel > table > tbody > tr > td > input {
+  outline: none;
+  border: @mb-panel-table-input-border;
+  border-radius: 0;
+  padding: 0 2px;
+  width: calc( ~'100% - @{mb-panel-table-input-border-width} - @{mb-panel-table-input-border-width} - 4px');
+  
+  &:disabled {
+    background: #c3c3c3;
+  }
+}
+
+.tracker > .mb > .mb-c > .mb-panel-cover > .mb-panel > table > tbody > tr > td > input.wrong {
+  background: #f3b3b3;
+}
+
+.tracker > .mb > .mb-c > .mb-panel-cover > .mb-panel > table > tbody > tr > td:not(:first-child) {
+  border-left: @mb-panel-table-tbody-border;
+}
+
+.tracker > .mb > .mb-calculating {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background: rgba(100,100,100,0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  > label {
+    padding: 10px;
+    font-size: 30px;
+    font-weight: bold;
+    color: blue;
+    text-shadow: 0 0 10px #fff;
+  }
+}

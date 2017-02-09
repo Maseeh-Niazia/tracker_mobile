@@ -1,0 +1,183 @@
+@header-button-color-normal: #3c3c3c;
+@header-menu-button-bg-hover: #a3b8cc;
+
+.tracker > .section-h .menu-existing-track {
+  height: @header-panel-size;
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  white-space: nowrap;
+}
+
+.tracker > .section-h .menu-existing-track > .bttn-existing-track {
+  width: 22px;
+  height: 20px;
+  margin: 0;
+  position: relative;
+  top: 6px;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  cursor: pointer;
+  margin: 0 4px;
+}
+
+.tracker > .section-h .menu-existing-track > .bttn-existing-track:hover {
+  box-shadow: @header-button-shadow-hover;
+}
+
+.tracker > .section-h .menu-existing-track > .bttn-existing-track:before {
+  content: url('../images/select.gif');
+  position: relative;
+  top: 0px;
+}
+
+.tracker > .section-h .menu-existing-track > .select-track {
+  background: #eeeeee;
+  display: inline-block;
+  min-width: calc(100%);
+  box-shadow: 1px 1px 2px grey;
+  position: absolute;
+  top: 36px;
+  left: 0px;
+  padding: 2px 0;
+  z-index: 10;
+}
+
+.tracker > .section-h .menu-existing-track > .select-track > button {
+  width: 100%;
+  display: list-item;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  background: none;
+  border: 0;
+  outline: 0;
+  padding: 4px 0;
+  color: @header-button-color-normal;
+  cursor: pointer;
+}
+
+.tracker > .section-h .menu-existing-track > .select-track > button:hover {
+  background: @header-menu-button-bg-hover;
+}
+
+.tracker > .section-h .menu-existing-track > .select-track > button {
+  margin-right: 8px;
+}
+
+.tracker > .section-h > h5 > .bttn-existing-track-model {
+  position: relative;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  white-space: nowrap;
+  border-radius: 2px;
+  width: auto;
+  padding-right: 5px;
+  margin-left: 0;
+  cursor: default;
+  display: inline-block;
+  
+  > button {
+    background: transparent;
+    border-radius: 2px;
+    padding: 5px;
+    border: 0;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: bold;
+    vertical-align: middle;
+    outline: none;
+  }
+  
+  > button:hover {
+    box-shadow: @header-button-shadow-hover;
+  }
+}
+
+/* icons for buttons */
+
+.tracker > .section-h > h5 > .bttn-existing-track-model > button > i,
+.tracker > .section-h .menu-existing-track > .select-track  > button > i {
+  vertical-align: middle;
+  display: inline-block;
+  width: 20px;
+  text-align: center;
+}
+
+.tracker > .section-h > h5 > .bttn-existing-track-model > button > i:before,
+.tracker > .section-h .menu-existing-track > .select-track  > button > i:before {
+  font-family: 'Panel Controls Icon';
+  font-size: 14px;
+  font-style: normal;
+  position: relative;
+}
+
+.tracker > .section-h > h5 > .bttn-existing-track-model > button > i[element="point"]:before,
+.tracker > .section-h .menu-existing-track > .select-track  > button > i[element="point"]:before {
+  content: 'g';
+}
+
+.tracker > .section-h > h5 > .bttn-existing-track-model > button > i[element="vector"]:before,
+.tracker > .section-h .menu-existing-track > .select-track  > button > i[element="vector"]:before {
+  content: 'f';
+  top: 1px;
+}
+
+.tracker > .section-h > h5 > .bttn-existing-track-model {
+  > div {
+    position: absolute;
+    left: 0px;
+    top: 30px;
+    margin: 0;
+    cursor: default;
+    z-index: 100;
+    list-style-type: none;
+    padding: 4px 0;
+    text-align: left;
+    background: #eeeeee;
+    display: inline-block;
+    box-shadow: 1px 1px 2px grey;
+    font-weight: normal;
+    width: 100px;
+
+    > hr {
+      margin: 2px 4px;
+    }
+  }
+ 
+  > div > button {
+    padding: 0 4px 0 16px;
+    height: 20px;
+    line-height: 20px;
+    position: relative;
+    background: none;
+    border: 0;
+    width: 100%;
+    text-align: left;
+    outline: none;
+    
+    &.disabled {
+      opacity: 0.4;
+    }
+
+    &:not(.disabled):hover {
+      background: #c3c3c3;
+      cursor: pointer;
+    }
+
+    &.checked:before {
+      content: '✓';
+      position: absolute;
+      left: 5px;
+    }
+  }
+}
+
+.tracker > .section-h .menu-existing-track > .select-track {
+  > hr {
+    margin: 4px 2px;
+  }
+}

@@ -1,2 +1,9 @@
-# tracker_mobile
-Tracker Mobile has been developed by Edmentum to provide web-based player functionality for Tracker TRK files.
+>> run any tracker application
+
+# gulp -a path/to/app/folder
+
+example:  gulp -a src/tracker/applications/car-zoom/
+
+>> build all applications
+
+# gulp build

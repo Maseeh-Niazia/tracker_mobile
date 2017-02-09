@@ -1,0 +1,115 @@
+.frame-panel-header > .menu-view-curent {
+  display: inline-block;
+  white-space: nowrap;
+  position: relative;
+}
+
+/* button view current */
+
+.frame-panel-header > .menu-view-curent > .bttn-view-current {
+  width: 30px;
+  height: 30px;
+  background: none;
+  padding: 0;
+  margin: 1px;
+  outline: none;
+  border: none;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+.frame-panel-header  > .menu-view-curent > .bttn-view-current:before {
+  font-family: 'Panel Controls Icon';
+  font-size: 20px;
+  color: @button-color-normal;
+  position: relative;
+}
+
+.frame-panel-header > .menu-view-curent > .bttn-view-current:hover:before {
+  color: @button-color-hover;
+}
+
+.frame-panel-header > .menu-view-curent > .bttn-view-current[current="graph"]:before {
+  content: 'a';
+  font-size: 26px;
+  top: 1px;
+}
+
+.frame-panel-header > .menu-view-curent > .bttn-view-current[current="table"]:before {
+  content: 'b';
+  top: 1px;
+}
+
+.frame-panel-header > .menu-view-curent > .bttn-view-current[current="default"]:before {
+  content: 'e';
+  top: 3px;
+}
+
+/* button view option  */
+
+.frame-panel-header > .menu-view-curent > .select-view {
+  background: #eeeeee;
+  display: inline-block;
+  width: 100px;
+  box-shadow: 1px 1px 2px #cccccc;
+  position: absolute;
+  top: 33px;
+  left: 0px;
+  z-index: 10;
+}
+
+.frame-panel-header > .menu-view-curent > .select-view > .bttn-view-option {
+  width: 100px;
+  height: 24px;
+  background: none;
+  padding: 0;
+  margin: 2px 0;
+  outline: none;
+  border: none;
+  vertical-align: middle;
+  cursor: pointer;
+  text-align: left;
+  display: list-item;
+  list-style: none;
+}
+
+.frame-panel-header > .menu-view-curent > .select-view > .bttn-view-option:hover {
+  background: @menu-button-bg-hover;
+}
+
+.frame-panel-header > .menu-view-curent > .select-view > .bttn-view-option:before {
+  display: inline-block;
+  width: 20px;
+  margin-right: 4px;
+  text-align: center;
+  position: relative;
+  top: 3px;
+}
+
+.frame-panel-header > .menu-view-curent > .select-view > .bttn-view-option[option="graph"]:before {
+  font-family: 'Panel Controls Icon';
+  font-size: 18px;
+  color: @button-color-normal;
+  content: 'a';
+}
+
+.frame-panel-header > .menu-view-curent > .select-view > .bttn-view-option[option="graph"]:after {
+  font-family: Arial;
+  font-size: 14px;
+  color: @button-color-normal;
+  content: 'Plot View';
+}
+
+.frame-panel-header > .menu-view-curent > .select-view > .bttn-view-option[option="table"]:before {
+  font-family: 'Panel Controls Icon';
+  font-size: 14px;
+  color: @button-color-normal;
+  content: 'b';
+}
+
+.frame-panel-header > .menu-view-curent > .select-view > .bttn-view-option[option="table"]:after {
+  font-family: Arial;
+  font-size: 14px;
+  color: @button-color-normal;
+  content: 'Table View';
+}

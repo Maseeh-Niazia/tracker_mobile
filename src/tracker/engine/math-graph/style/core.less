@@ -1,0 +1,86 @@
+@import './series.less';
+
+.flex( @a, @b ) {
+  -webkit-box-align: @a;
+  -webkit-align-items: @a;
+  -ms-flex-align: @a;
+  align-items: @a;
+  
+  -webkit-box-pack: @b;
+  -webkit-justify-content: @b;
+  -ms-flex-pack: @b;
+  justify-content: @b;
+}
+
+.ct-label {
+  fill: rgba(0, 0, 0, 0.4);
+  color: rgba(0, 0, 0, 0.4);
+  font-size: 0.75rem;
+  line-height: 1;
+}
+
+.ct-chart-line .ct-label {
+  display: block;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+.ct-label.ct-horizontal.ct-start {
+  .flex( flex-end, flex-start );
+  text-align: left;
+  text-anchor: middle;
+}
+
+.ct-label.ct-horizontal.ct-end {
+  .flex( flex-start, flex-start );
+  text-align: left;
+  text-anchor: middle;
+}
+
+.ct-label.ct-vertical.ct-start {
+  .flex( flex-end, flex-end );
+  text-align: right;
+  text-anchor: end;
+}
+
+.ct-label.ct-vertical.ct-end {
+  .flex( flex-end, flex-start );
+  text-align: left;
+  text-anchor: start;
+}
+
+.ct-grid {
+  stroke: rgba(0, 0, 0, 0.2);
+  stroke-width: 1px;
+  stroke-dasharray: 2px;
+}
+
+.ct-point {
+  stroke-width: 10px;
+  stroke-linecap: round;
+}
+
+.ct-line {
+  fill: none;
+  stroke-width: 4px;
+}
+
+.ct-chart-line .ct-grids {
+  cursor: crosshair;
+  pointer-events: bounding-box;
+}
+
+.ct-chart-line .ct-grids .ct-grid {
+  shape-rendering: crispEdges;
+}
+
+.ct-chart-line .ct-line {
+  cursor: crosshair;
+}
+
+.ct-chart-line .ct-point {
+  cursor: pointer;
+}

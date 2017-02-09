@@ -1,0 +1,8 @@
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <g class="tools-axis">
+    <line name="axis-x" x1="0" y1="0" x2="20" y2="20" stroke="#c800c8" stroke-width="2" shape-rendering="geometricPresicion"></line>
+    <line name="axis-y" x1="0" y1="0" x2="20" y2="20" stroke="#c800c8" stroke-width="2" shape-rendering="geometricPresicion"></line>
+    <line name="axis-x-hit" x1="0" y1="0" x2="20" y2="20" stroke="#ff0000" stroke-width="16" opacity="0" shape-rendering="geometricPresicion"></line>
+    <line name="axis-y-hit" x1="0" y1="0" x2="20" y2="20" stroke="#ff0000" stroke-width="16" opacity="0" shape-rendering="geometricPresicion"></line>
+  </g>
+</svg>

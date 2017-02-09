@@ -1,0 +1,107 @@
+/* button select object */
+
+.frame-panel-header > .menu-object-current {
+  display: inline-block;
+  white-space: nowrap;
+  margin-left: 6px;
+  position: relative;
+}
+
+.frame-panel-header > .menu-object-current > .bttn-object-current {
+  display: inline-block;
+  border: @button-border;
+  padding: 0;
+  margin: 0;
+  height: @header-height - 6px;
+  background: transparent;
+  box-shadow: @button-box-shadow;
+  outline: none;
+  vertical-align: middle;
+  position: relative;
+  overflow: hidden;
+  line-height: 12px;
+  cursor: pointer;
+  color: @button-color-normal;
+}
+
+.frame-panel-header > .menu-object-current > .bttn-object-current:hover {
+  color: @button-color-hover;
+}
+
+.frame-panel-header > .menu-object-current > .bttn-object-current:after {
+  font-family: 'Panel Controls Icon';
+  font-size: 24px;
+  //float: right;
+  content: 'd';
+  position: relative;
+  //top: 2px;
+  vertical-align: middle;
+}
+
+/* menu select styles */
+
+.frame-panel-header > .menu-object-current > .select-object {
+  background: #eeeeee;
+  display: inline-block;
+  min-width: calc(100%);
+  box-shadow: 1px 1px 2px #cccccc;
+  position: absolute;
+  top: 30px;
+  left: 0px;
+  padding: 2px 0;
+  z-index: 10;
+}
+
+/* menu selec button styles */
+
+.frame-panel-header > .menu-object-current > .select-object > button {
+  width: 100%;
+  display: list-item;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  background: none;
+  border: 0;
+  outline: 0;
+  padding: 4px 0;
+  color: @button-color-normal;
+  cursor: pointer;
+  list-style: none;
+}
+
+.frame-panel-header > .menu-object-current > .select-object > button:hover {
+  background: @menu-button-bg-hover;
+}
+
+.frame-panel-header > .menu-object-current > .select-object > button {
+  margin-right: 8px;
+}
+
+/* icons for buttons */
+
+.frame-panel-header > .menu-object-current > .bttn-object-current > i,
+.frame-panel-header > .menu-object-current > .select-object > button > i {
+  vertical-align: middle;
+  display: inline-block;
+  width: 20px;
+  text-align: center;
+}
+
+.frame-panel-header > .menu-object-current > .bttn-object-current > i:before,
+.frame-panel-header > .menu-object-current > .select-object > button > i:before {
+  font-family: 'Panel Controls Icon';
+  font-size: 14px;
+  font-style: normal;
+  position: relative;
+}
+
+.frame-panel-header > .menu-object-current > .bttn-object-current > i[element="point"]:before,
+.frame-panel-header > .menu-object-current > .select-object > button > i[element="point"]:before {
+  content: 'g';
+}
+
+.frame-panel-header > .menu-object-current > .bttn-object-current > i[element="vector"]:before,
+.frame-panel-header > .menu-object-current > .select-object > button > i[element="vector"]:before {
+  content: 'f';
+  top: 1px;
+}

@@ -1,0 +1,124 @@
+@font-face {
+  font-family: 'Tracker Icons';
+  src: url('./tracker.woff') format('woff');
+}
+
+@separator-size: 8px;
+@header-panel-size: 34px;
+
+/* define styles  */
+
+.tracker {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* left and right sections */
+
+.tracker > .section-l {
+  position: relative;
+  float: left;
+  height: calc( ~'100% - @{header-panel-size}' );
+}
+
+.tracker > .section-r {
+  float: right;
+  height: calc( ~'100% - @{header-panel-size}' );
+  /*overflow: hidden;*/
+}
+
+/* section left > top and bottom */
+
+.tracker > .section-l > .section-t {
+  position: relative;
+}
+
+.tracker > .section-l > .section-b {
+  position: relative;
+}
+
+/* section left > section bottom > left and right */
+
+.tracker > .section-l > .section-b > .section-l {
+  position: relative;
+  float: left;
+  height: 100%;
+}
+
+.tracker > .section-l > .section-b > .section-r {
+  float: right;
+  height: 100%;
+}
+
+/* section right > top and bottom */
+
+.tracker > .section-r > .section-t {
+  position: relative;
+  height: calc(~'50% - @{separator-size}');
+}
+
+.tracker > .section-r > .section-b {
+  height: calc(~'50%');
+}
+
+/* panels separator */
+
+.splitter {
+  position: relative;
+  margin: 0;
+  border: 0;
+  padding: 0;
+}
+
+.splitter.horizontal {
+  width: 100%;
+  height: @separator-size;
+  background-image: url('./images/divider-horizontal.gif');
+  background-position: center center;
+  cursor: s-resize;
+}
+
+.splitter.vertical {
+  height: 100%;
+  float: left;
+  width: @separator-size;
+  background-image: url('./images/divider-vertical.gif');
+  background-position: center center;
+  cursor: e-resize;
+}
+
+.tracker > .splitter.vertical {
+  height: calc(~'100% - @{header-panel-size}');
+}
+
+// Special mode: vertical without right @-o-keyframes
+
+.tracker.mode-without-right-frames {
+  > .splitter.vertical {
+    display: none;
+  }
+  
+  > .section-r {
+    display: none;
+  }
+}
+
+.tracker.mode-without-bottom-frames {
+  > .section-l {
+    > .splitter.horizontal {
+      display: none;
+    }
+    
+    > .section-b {
+      display: none;
+    }
+  }
+}

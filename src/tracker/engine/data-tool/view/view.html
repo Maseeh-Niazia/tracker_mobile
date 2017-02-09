@@ -1,0 +1,83 @@
+<div class="data-tool">
+  <div class="dt-panel-header">
+    <h1>Tracker &gt; Data tool &gt;</h1>
+    <h5>
+      <button class="bttn-toggle" name="slope">Slope</button>
+      <button class="bttn-toggle" name="fit">Fit</button>
+      <span class="splitter"></span>
+      <a name="get-graph-as-image">Download graph as image</a>
+      <span class="splitter"></span>
+      <button class="bttn-data-tool-close"></button>
+    </h5>
+  </div>
+  <div class="dt-panel-l">
+    <div class="dt-panel-graph">
+      <div class="dt-panel-graph-chart"></div>
+      <label class="title"></label>
+      <label class="slope"></label>
+      <label class="coords"></label>
+      <label class="axis-x"><span></span></label>
+      <label class="axis-y"><span></span></label>
+    </div>
+    <hr class="splitter horizontal" />
+    <div class="dt-panel-feat">
+      <div class="dt-panel-l">
+        <div class="dt-panel-row">
+          <label class="fit-name">Fit Name: </label>
+          <button class="fit-name-value">
+            <span></span>
+            <div class="dt-panel-row-menu"></div>
+          </button>
+          <button name="fit-auto">Autofit</button>
+          <button name="fit-builder">Fit Builder</button>
+        </div>
+        <div class="dt-panel-row">
+          <label class="fit-equation">Fit Equation: </label>
+          <label class="fit-equation-value"><span></span></label>
+        </div>
+        <div class="dt-panel-row">
+          <label class="fit-rms">RMS dev: </label>
+          <label class="fit-rms-value"><span></span></label>
+        </div>
+      </div>
+      <hr class="splitter vertical" />
+      <div class="dt-panel-r">
+        <table class="dt-feat-parametrs">
+          <thead>
+            <tr>
+              <td>Parameter</td>
+              <td>Value</td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td></td>
+              <td><input type="text" disabled="disabled"></input></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>    
+  </div>
+  <hr class="splitter vertical" />
+  <div class="dt-panel-r">
+    <div class="dt-panel-data">
+      <table>
+        <thead>
+          <tr>
+            <td>row</td>
+            <td>y</td>
+            <td>x</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>0</td>
+            <td>1</td>
+            <td>2</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
