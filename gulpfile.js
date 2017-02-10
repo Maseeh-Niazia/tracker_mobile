@@ -25,19 +25,11 @@ require( './gulp_modules/task-build' )( ops );
 require( './gulp_modules/task-eslint' )( ops );
 require( './gulp_modules/task-server' )( ops );
 require( './gulp_modules/task-build-all-make' )();
-require( './gulp_modules/task-build-all-upload' )();
-require( './gulp_modules/task-commit-applications.js' )();
 
-// Task: build all and upload to ftp
-if ( process.argv.indexOf( '--u' ) === -1 ) {
-  gulp.task( 'build', function( cb ) {
-    sequence( 'clean', 'build-make', cb );
-  } );
-} else {
-  gulp.task( 'build', function( cb ) {
-    sequence( 'clean', 'build-make', 'build-upload', cb );
-  } );
-}
+// Task: build all
+gulp.task( 'build', function( cb ) {
+  sequence( 'clean', 'build-make', cb );
+});
 
 // Task: default web dev hot server
 gulp.task( 'default:check', function( cb ) {
@@ -46,8 +38,8 @@ gulp.task( 'default:check', function( cb ) {
     process.exit( 1 );
   }
   cb();
-} );
+});
 
 gulp.task( 'default', function( cb ) {
   sequence( 'default:check', 'clean', 'index', 'server', cb );
-} );
+});

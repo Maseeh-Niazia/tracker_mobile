@@ -20,8 +20,6 @@
     "gulp-rename": "^1.2.2",
     "gulp-sequence": "^0.4.5",
     "gulp-util": "^3.0.6",
-    "guppy-commit-msg": "^0.2.0",
-    "guppy-pre-commit": "0.2.1",
     "less": "^2.5.1",
     "less-loader": "^2.2.1",
     "path": "^0.11.14",
