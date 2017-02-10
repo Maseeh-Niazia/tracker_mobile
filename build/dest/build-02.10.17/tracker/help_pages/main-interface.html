@@ -1,0 +1,134 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+
+  <head>
+    <title>Tracker Help: Main interface</title>
+    <link href="../help.css" rel="stylesheet" type="text/css" />
+  </head>
+
+  <body>
+    <h1>Main interface</h1>
+    <h3><a id="main-view" name="main-view"></a>1. Main view</h3>
+    <p align="center">
+      <img src="../help_images/image1.png">
+    </p>
+    <p>Each Tracker tab, like <i>Swing</i> above, displays the following components:</p>
+    <ul>
+      <li><strong>Video frame</strong> displays video images and measurements. Controls are on the bottom.</li>
+      <li><strong>Data frames</strong> present data in either Plot (graph) or Table format.</li>
+      <li><strong>Toolbar</strong> across the top to control lab measurements & display tools</li>
+    </ul>
+
+    <h3><a id="video-frame" name="video-frame"></a>2. Video frame</h3>
+    <p>The controls at the bottom of the video frame allow you to control video playback and examine specific video frames:</p>
+    <p align="center">
+      <img src="../help_images/image2.png">
+    </p>
+    <p>Basic controls:</p>
+    <ul>
+      <li>Click play <img src="../help_images/image3.png"> to watch the video.</li>
+      <li>Rewind <img src="../help_images/image4.png"> the video to the beginning.</li>
+      <li>Step forward <img src="../help_images/image5.png"> or backward <img src="../help_images/image6.png"> one frame at a time.</li>
+    </ul>
+    <p>Other displays and controls:</p>
+    <ul>
+      <li><img src="../help_images/image7.png"> Time display (seconds)</li>
+      <li><img src="../help_images/image8.png"> Control the playback speed from 10% to 100% of actual recorded speed. (Click < > to control.)</li>
+    </ul>
+
+    <h3><a id="data-frames" name="data-frames"></a>3. Data frames</h3>
+    <p>Plot / video interaction: Click any point of interest on a Plot (graph) to inspect the video at that point in time:</p>
+    <p align="center">
+      <img src="../help_images/image9.png">
+    </p>
+    <p>Select Plot/Table: Change any data frame from a Plot to a Table view (or vice versa):</p>
+    <p align="center">
+      <img src="../help_images/image10.png">
+    </p>
+    <p>Change Plot axes: Change the variable plotted on either axis by clicking the axis label and selecting a different variable.</p>
+    <p align="center">
+      <img src="../help_images/image11.png">
+    </p>
+    <p>Change Table columns: Check variables to select the data columns to show in a table:</p>
+    <p align="center">
+      <img src="../help_images/image12.png">
+    </p>
+
+    <h3><a id="toolbar" name="toolbar"></a>4. Toolbar</h3>
+    <p align="center">
+      <img src="../help_images/image13.png">
+    </p>
+    <p>The main toolbar at the top of the screen enables you to control the measurements displayed on the video, define <nobr>mathematically-modelled</nobr>
+measurements, and take angle and length measurements directly from a video frame. From left to right the tools are:</p>
+    <table class="help-toolbar">
+      <tbody>
+        <tr>
+          <td><img src="../help_images/image14.png"></td>
+          <td><strong>Measurement selector</strong> enables you to choose any of the measurements from the video to act on with the Measurement
+control (see below). It also enables you to create a center of mass virtual particle or other modeled “particles” that can help
+you mathematically recreate some aspect of the recorded event. [<a href="modeling.html" target="body">See Modeling.</a>]</td>
+        </tr>
+        <tr>
+          <td><img src="../help_images/image15.png" width="auto"></td>
+          <td><strong>Measurement control</strong> enables you to make the selected measurement visible or not on the video display. If it’s a modeled
+measurement, you can also modify your current model definition from this control. [<a href="modeling.html" target="body">See Modeling.</a>]</td>
+        </tr>
+        <tr>
+          <td><img src="../help_images/image16.png"></td>
+          <td><strong>Axes</strong> button shows or hides the coordinate axes. (Violet in image below.)</td>
+        </tr>
+        <tr>
+          <td><img src="../help_images/image17.png"></td>
+          <td><strong>Ruler</strong> button shows or hides the ruler, measured in meters. (Blue in image below: Length from pivot to bottom of swing.)</td>
+        </tr>
+        <tr>
+          <td><img src="../help_images/image18.png"></td>
+          <td><strong>Protractor</strong> button shows or hides the protractor, measured in degrees. (Green in image below: Angle of swing from
+vertical.)</td>
+        </tr>
+        <tr>
+          <td><img src="../help_images/image19.png"></td>
+          <td><strong>Help</strong> button opens this Help window.</td>
+        </tr>
+      </tbody>
+    </table>
+    <p align="center">
+      <img src="../help_images/image20.png">
+    </p>
+
+    <h3><a id="tool-use-notes" name="tool-use-notes"></a>5. Tool use notes</h3>
+    <ul>
+      <li>
+        <p><strong>Measurement selector: Create Center of Mass –</strong> This enables you to define a “virtual particle” for the center of mass of two or
+more particle measurements. That’s useful for simplifying a complex situation where objects are interacting with each other or
+where a complex object has movable parts (like a machine or a human body.)</p>
+        <p>When you create a center of mass particle, you check-mark which of the previously-defined particles you want to include, as
+shown in the orange dialog box below. You can also use the color-picker menu near the top right to select a color that will show
+up well against the video background and be different from the other particles in your model.</p>
+        <p>Your new center of mass particle will appear in your video display. (Orange circle in collision video below) You can also analyze
+the center of mass particle’s data in any table or plot.</p>
+        <p align="center">
+          <img src="../help_images/image21.png">
+          <img src="../help_images/image22.png">
+        </p>
+      </li>
+      <li>
+        <p><strong>Measurement selector: Analytic Particle Model or Dynamic Particle Model –</strong> <a href="modeling.html" target="body">See Modeling</a> below for details.</p>
+      </li>
+      <li>
+        <p><strong>Axes –</strong> Click any point on the axes to select it, allowing you to move the origin to a different location. This is useful if you want to
+set the origin to match the starting point of an object’s motion or want to set it to a point where the potential energy is at a
+minimum, as in the case in the Swing video, above. Once the axes are selected you can drag the origin to a different location or
+use the arrow keys of a keyboard to “fine tune” its location. Click anywhere else on the Tracker window to deselect the axes.</p>
+      </li>
+      <li>
+        <p><strong>Ruler –</strong> Click the ruler to move it to a different location. Grab either end to reposition it or change its length.</p>
+      </li>
+      <li>
+        <p><strong>Protractor –</strong> Grab either end of the protractor or its vertex to reposition it or change its angle.</p>
+      </li>
+    </ul>
+</body>
+
+</html>

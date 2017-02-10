@@ -1,0 +1,139 @@
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	color: black;
+	background-color: #FFFFFF;
+	padding: 6px;
+}
+
+#toc {
+	background-color: lightyellow;
+	width: 100%;
+	height: 100%;
+}
+
+#toc > ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+#toc > ul > li {
+	margin-bottom: 20px;
+}
+
+#toc > ul > li > a {
+	line-height: normal;
+}
+
+#toc > ul > li > ol {
+	margin: 5px 0 0 0;
+	padding: 0 0 0 20px;
+}
+
+#content {
+	float: right;
+	border: 0;
+	padding: 0;
+	margin: 0;
+	width: calc( 100% - 150px );
+	height: 100%;
+}
+
+h1 {
+	font-size: 24pt;
+	margin-top: 12px;
+	margin-bottom: 8px;
+	padding-top: 20px;
+	padding-bottom: 12px;
+	line-height: 22px;
+	color: #52677f;
+	text-align: center
+}
+
+h2 {
+	font-size: 16pt;
+	margin-top: 12px;
+	padding-top: 10px;
+	line-height: 24px;
+	color: #52677f;
+	text-align: left
+}
+
+h3 {
+	font-size: 14pt;
+	color: #52677f;
+}
+
+h4, ul, ol, blockquote {
+	margin-top: 12pt;
+	margin-bottom: 8pt;
+}
+
+h5 {
+  font-size: 10pt;
+  margin-top: 10pt;
+  margin-bottom: 0pt;
+  line-height: 12px;
+  text-align: center
+}
+
+p, #content li, td, li, blockquote, h4, th, #subnav {
+	font-size: 12pt;
+	line-height: 16pt;
+}
+/*
+ul > li > a {
+	display: inline-block;
+	padding-left: 40px;
+	text-indent: -40px;
+	vertical-align: top;
+}
+
+ol > li > a {
+	display: inline-block;
+	padding-left: 20px;
+	text-indent: -20px;
+	vertical-align: top;
+	line-height: normal;
+}
+*/
+a:link { color: blue }
+a:visited { color: purple }
+address {
+  margin-top: 1em;
+  padding-top: 1em;
+  border-top: thin dotted
+}
+table {
+	margin-top: 24px;
+}
+
+img {
+  max-width: 100%;
+	vertical-align: middle;
+}
+
+img {
+	box-shadow: 0 0 1px #000;
+}
+
+@media (max-width: 600px) {
+	p, #content li, td, li, blockquote, h4, th, #subnav {
+		font-size: 12px;
+	}
+}
+
+.help-toolbar td:first-child {
+	width: 130px;
+}
+
+.math-basics td:first-child {
+	padding-left: 30px;
+	width: 30px;
+}
+
+.good-practice {
+	padding: 10px;
+	border-radius: 10px;
+	background: rgba(0,255,0,0.2);
+}
