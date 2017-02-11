@@ -154,7 +154,12 @@ var buildTracker = function() {
       console.log( err );
       process.exit( 1 );
     } else {
+
       gutil.log( TITLE, gutil.colors.green( 'tracker engine' ), 'created' );
+
+      // Copy to root directory
+      fs.copySync(path.resolve( __dirname, '.' + buildDirTracker + '/tracker.js'), './tracker.js');
+
     }
   } );
 };
