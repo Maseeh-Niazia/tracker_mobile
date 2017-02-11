@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="initial-scale=1.0,width=device-width,user-scalable=0, minimal-ui" />
+  <link href="data:image/x-icon;base64," rel="icon" type="image/x-icon" />
+  <style>
+    html, body { width: 100%; height: 100%; padding: 0; margin: 0; background: #fff; }
+    body { text-align: center; overflow: hidden; }
+  </style>
+</head>
+<body>
+
+	<!-- Include Tracker lib -->
+	<script type="text/javascript" src="../build/dest/build-02.11.17/tracker/tracker.js"></script>
+
+	<!-- Load data -->
+	<script type="text/javascript">
+
+	var config = {
+	// Application restrictions on size
+	  'application': {
+	    name: 'Acrylite to Air'
+	  },
+	  // Minimum video section size
+	  'video': {
+	    width: 700,
+	    height: 530
+	  },
+	  'rightT': {
+	    'visible': false
+	  },
+	  'rightB': {
+	    'visible': false
+	  },
+	  'bottomL': {
+	    'visible': false
+	  },
+	  'bottomR': {
+	    'visible': false
+	  }
+	};
+
+	var data = {
+	  'video': {
+	    frameStart: 0, // from 0
+	    frameStep: 0.198, // seconds
+	    frameRate: 5.1, // fps
+	    playRate: 1, // percantage
+	    frameCurrent: 0, // current frame
+	    frames: [
+            ["frame-00.jpg"],
+            ["frame-01.jpg"],
+            ["frame-02.jpg"],
+        ],
+	    width: 640,
+	    height: 480,
+	    displayState: 'frame'
+	  },
+	  'matrix': {
+	    xorigin: 331.0,
+	    yorigin: 238.0,
+	    angle: -0.09517562593594513,
+	    xscale: 1.0,
+	    yscale: 1.0
+	  },
+	  'axis': {
+	    visible: true
+	  },
+	  'protractor': {
+	    visible: true,
+	    color: '#00ff00',
+	    points: [
+	      { x: 466, y: 121 },
+	      { x: 499, y: 170 },
+	      { x: 408, y: 114 }
+	    ]
+	  },
+	  'objects': [
+	    
+	  ]
+	};
+
+	// Load Tracker
+	window.application = new window.Tracker(config, data);
+
+	</script>
+
+
+</body>
+</html>
