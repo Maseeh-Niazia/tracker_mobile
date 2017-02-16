@@ -1,0 +1,123 @@
+@import './controls/existing-track';
+
+/* variables */
+
+@header-panel-size: 34px;
+@header-button-margin: 4px;
+@header-button-size: @header-panel-size - @header-button-margin - @header-button-margin;
+@header-button-background: transparent;
+@header-button-shadow-hover: 0 0 1px 1px #9b9b9b;
+@header-button-background-on: #80fba7;
+@header-button-shadow-on: 0 0 1px 1px #d9ffe5;
+@header-button-shadow-on-hover: 0 0 1px 1px #40fb7b;
+
+/* header styles */
+
+.tracker > .section-h {
+  width: 100%;
+  height: @header-panel-size - 1px;
+  font-family: Arial;
+  text-align: left;
+  position: relative;
+  border-bottom: 1px solid grey;
+  background: -moz-linear-gradient(top, #ffffff 0%, #dddddd 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#dddddd)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #ffffff 0%,#dddddd 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #ffffff 0%,#dddddd 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, #ffffff 0%,#dddddd 100%); /* IE10+ */
+  background: linear-gradient(to bottom, #ffffff 0%,#dddddd 100%); /* W3C */
+}
+
+.tracker > .section-h > h1 {
+  vertical-align: middle;
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+  color: #000;
+  font-size: 18px;
+  font-weight: bold;
+  margin-left: 10px;
+  position: relative;
+  top: 8px;
+}
+
+.tracker > .section-h > h1:before {
+  content: 'Tracker: ';
+}
+
+/* splitter */
+
+.tracker > .section-h .splitter {
+  display: inline-block;
+  background: url('./images/splitter.gif');
+  width: 2px;
+  height: 20px;
+  position: relative;
+  top: 7px;
+}
+
+/* buttons */
+
+.tracker > .section-h > h5 {
+  vertical-align: middle;
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+  float: right;
+  height: @header-panel-size;
+}
+
+.tracker > .section-h > h5 > button {
+  width: @header-button-size;
+  height: @header-button-size;
+  margin: @header-button-margin;
+  border: 0;
+  padding: 0;
+  outline: none;
+  background: transparent;
+  border-radius: @header-button-size;
+  vertical-align: middle;
+  cursor: pointer;
+  background: @header-button-background;
+  font-weight: bold;
+}
+
+.tracker > .section-h > h5 > button:hover {
+  box-shadow: @header-button-shadow-hover;
+}
+
+.tracker > .section-h > h5 > button.on {
+  background: @header-button-background-on;
+  box-shadow: @header-button-shadow-on;
+}
+
+.tracker > .section-h > h5 > button.on:hover {
+  box-shadow: @header-button-shadow-on-hover;
+}
+
+.tracker > .section-h > h5 > .bttn-protractor:before {
+  content: url('./images/protractor.gif');
+  width: 20px;
+  height: 20px;
+}
+
+.tracker > .section-h > h5 > .bttn-axes:before {
+  content: url('./images/axes.gif');
+  width: 20px;
+  height: 20px;
+}
+
+.tracker > .section-h > h5 > .bttn-tape:before {
+  content: url('./images/tape.gif');
+  width: 20px;
+  height: 20px;
+}
+
+.tracker > .section-h > h5 > .bttn-help {
+  text-align: center;
+  font-size: 20px;
+}
+
+.tracker > .section-h .menu-existing-track > .select-track > button {
+  padding-left: 4px;
+}

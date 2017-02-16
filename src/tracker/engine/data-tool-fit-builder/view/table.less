@@ -1,0 +1,58 @@
+@mb-panel-table-margin: 2px;
+@mb-panel-table-thead-border: 1px solid #7a8a99;
+@mb-panel-table-tbody-border: 1px solid #999999;
+@mb-panel-table-input-border-width: 1px;
+@mb-panel-table-input-border: @mb-panel-table-input-border-width inset #a9a9a9;
+
+.tracker > .dtfb > .dtfb-c > .dtfb-panel-cover > .dtfb-panel > table {
+  padding: 0;
+  border-spacing: 0px;
+  border: 1px solid grey;
+  margin: @mb-panel-table-margin;
+  width: calc(~'100% - @{mb-panel-table-margin} - @{mb-panel-table-margin}');
+}
+
+/* head */
+
+.tracker > .dtfb > .dtfb-c > .dtfb-panel-cover > .dtfb-panel > table > thead {
+  background: #dddddd;
+}
+
+.tracker > .dtfb > .dtfb-c > .dtfb-panel-cover > .dtfb-panel > table > thead > tr > td {
+  width: 50%;
+  text-align: center;
+  border-bottom: @mb-panel-table-thead-border;
+}
+
+.tracker > .dtfb > .dtfb-c > .dtfb-panel-cover > .dtfb-panel > table > thead > tr > td:not(:first-child) {
+  border-left: @mb-panel-table-thead-border;
+}
+
+/* body */
+
+.tracker > .dtfb > .dtfb-c > .dtfb-panel-cover > .dtfb-panel > table > tbody > tr > td {
+  width: 50%;
+  border-bottom: @mb-panel-table-tbody-border;
+}
+
+.tracker > .dtfb > .dtfb-c > .dtfb-panel-cover > .dtfb-panel > table > tbody > tr.active {
+  background: #00ccff; 
+}
+
+.tracker > .dtfb > .dtfb-c > .dtfb-panel-cover > .dtfb-panel > table > tbody > tr > td > label {
+  padding: 0 2px;
+}
+
+.tracker > .dtfb > .dtfb-c > .dtfb-panel-cover > .dtfb-panel > table > tbody > tr > td > input {
+  outline: none;
+  border: @mb-panel-table-input-border;
+  width: calc( ~'100% - @{mb-panel-table-input-border-width} - @{mb-panel-table-input-border-width}');
+}
+
+.tracker > .dtfb > .dtfb-c > .dtfb-panel-cover > .dtfb-panel > table > tbody > tr > td > input.wrong {
+  background: #f3b3b3;
+}
+
+.tracker > .dtfb > .dtfb-c > .dtfb-panel-cover > .dtfb-panel > table > tbody > tr > td:not(:first-child) {
+  border-left: @mb-panel-table-tbody-border;
+}

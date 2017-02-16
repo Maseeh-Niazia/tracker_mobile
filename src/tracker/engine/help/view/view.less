@@ -1,0 +1,89 @@
+@help-header-height: 30px;
+@help-content-margin: 5px;
+@help-content-background: #eeeeee;
+
+.help-button-style() {
+  background: -moz-linear-gradient(top, #e2ebf5 0%, #ffffff 34%, #bed3e7 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#e2ebf5), color-stop(34%,#ffffff), color-stop(100%,#bed3e7)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #e2ebf5 0%,#ffffff 34%,#bed3e7 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #e2ebf5 0%,#ffffff 34%,#bed3e7 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, #e2ebf5 0%,#ffffff 34%,#bed3e7 100%); /* IE10+ */
+  background: linear-gradient(to bottom, #e2ebf5 0%,#ffffff 34%,#bed3e7 100%); /* W3C */
+  border: 1px solid #7a8a99;
+  padding: 2px 10px;
+  outline: none;
+  font-weight: bold;
+}
+
+.tracker > .help {
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  z-index: 3000;
+  box-shadow: 1px 1px 2px grey;
+  background: #F0C869;
+  font-family: Arial;
+  width: 100%;
+  height: calc( ~'100% - 34px' );
+}
+
+/* header */
+
+.tracker > .help > .help-h {
+  width: 100%;
+  height: @help-header-height;
+  position: relative;
+}
+
+.tracker > .help > .help-h > h1 {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 8px 0;
+}
+
+.tracker > .help > .help-h > button {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  outline: 0;
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  width: 24px;
+  height: 24px;
+  background: transparent;
+  border-radius: 24px;
+  cursor: pointer;
+}
+
+.tracker > .help > .help-h > button:before {
+  font-family: 'Tracker Icons';
+  content: 'a';
+  font-size: 22px;
+  font-weight: normal;
+}
+
+.tracker > .help > .help-h > button:hover:before {
+  color: indianred;
+}
+
+/* content */
+
+.tracker > .help > .help-c {
+  background: @help-content-background;
+  margin: 5px;
+  width: calc(~'100% - @{help-content-margin} - @{help-content-margin}');
+  height: calc(~'100% - @{help-content-margin} - @{help-content-margin} - @{help-header-height}');
+}
+
+#help-box {
+  height: calc( ~'100% - 2px - 2px' );
+  width: calc( ~'100% - 2px - 2px' );
+  border: 2px outset #ccc;
+  
+  > iframe {
+    border: 0;
+  }
+}

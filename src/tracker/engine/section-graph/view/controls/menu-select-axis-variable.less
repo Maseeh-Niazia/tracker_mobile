@@ -1,0 +1,123 @@
+/* button select axis */
+
+.data-view-graph  .menu-axis-current {
+  display: inline-block;
+  white-space: nowrap;
+  position: relative;
+}
+
+.data-view-graph .menu-axis-current > .bttn-axis-current {
+  display: inline-block;
+  border: none;
+  padding: 0;
+  margin: 0;
+  height: @button-height;
+  min-width: @button-height;
+  background: transparent;
+  outline: none;
+  vertical-align: middle;
+  position: relative;
+  overflow: hidden;
+  line-height: 12px;
+  cursor: pointer;
+  color: @button-color-normal;
+  text-align: center;
+}
+
+.data-view-graph .menu-axis-current > .bttn-axis-current:hover {
+  color: @button-color-hover;
+  box-shadow: 0 0 1px 1px grey;
+}
+
+/* menu select styles */
+
+.data-view-graph .menu-axis-current > .select-axis {
+  background: #eeeeee;
+  display: inline-block;
+  min-width: calc(100%);
+  box-shadow: 0px 0px 1px 1px #cccccc;
+  position: absolute;
+  top: @button-height;
+  left: 0px;
+  padding: 2px;
+  z-index: 10;
+}
+
+.data-view-graph .dvg-axisY-title .menu-axis-current > .select-axis {
+  width: 50px;
+  white-space: normal;
+}
+
+.data-view-graph .dvg-axisY-title .menu-axis-current > .select-axis:before {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-width: 10px;
+  border-style: solid;
+  border-color: transparent #d9d9d9 transparent transparent;
+  top: calc( ~'50% - 10px' );
+  left: -20px;
+}
+
+.data-view-graph .dvg-axisX-title .menu-axis-current > .select-axis:before {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-width: 10px;
+  border-style: solid;
+  border-color: #d9d9d9 transparent transparent  transparent;
+  top: 24px;
+  left: calc( ~'50% - 10px' );
+}
+
+.data-view-graph  .dvg-axisX-title .menu-axis-current > .select-axis > button {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+}
+
+/* menu selec button styles */
+
+.data-view-graph .menu-axis-current > .select-axis > button {
+  padding: 2px 8px 2px 4px;
+  width: 100%;
+  display: list-item;
+  margin: 0;
+  text-align: left;
+  background: none;
+  border: 0;
+  outline: 0;
+  color: @button-color-normal;
+  cursor: pointer;
+}
+
+.data-view-graph .dvg-axisY-title .menu-axis-current > .select-axis > button {
+  display: inline-block;
+  width: 22px;
+}
+
+.data-view-graph .menu-axis-current > .select-axis > button:hover {
+  background: @menu-button-bg-hover; 
+}
+
+.data-view-graph .menu-axis-current > .select-axis > button > span.index-x:after,
+.data-view-graph .menu-axis-current > .select-axis > button > span.index-y:after,
+.data-view-graph .menu-axis-current > .bttn-axis-current > span.index-x:after,
+.data-view-graph .menu-axis-current > .bttn-axis-current > span.index-y:after {
+  font-family: Arial;
+  font-size: 10px;
+  position: relative;
+  top: 4px;
+}
+
+.data-view-graph .menu-axis-current > .select-axis > button > span.index-x:after,
+.data-view-graph .menu-axis-current > .bttn-axis-current > span.index-x:after {
+  content: 'x';
+}
+
+.data-view-graph .menu-axis-current > .select-axis > button > span.index-y:after,
+.data-view-graph .menu-axis-current > .bttn-axis-current > span.index-y:after {
+  content: 'y';
+}

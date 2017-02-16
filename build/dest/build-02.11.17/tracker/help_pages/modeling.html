@@ -1,0 +1,104 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+
+<head>
+  <title>Tracker Help: Modeling</title>
+  <link href="../help.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <h1>Modeling</h1>
+  
+  <h3><a id="basics" name="basics"></a>1. Model basics</h3>
+  <p><strong>Overview</strong><br/>In addition to a <a href="main-interface.html#tool-use-notes" target="body">Center of Mass</a> particle, you can create two types of mathematical models with Tracker: a Dynamic particle model and
+an Analytic particle model. Both are described in detail below. The idea in either case, though, is to create a mathematically-defined
+measurement that shows up as a particle measurement in your video frame and can be analyzed in graphs and plots.</p>
+  <p>Usually, the point of a modeled particle is to define a mathematical rule that enables you to closely match an actual particle
+measurement on your video. If your modelled particle tracks your measured particle closely (nearly the same location in every video
+frame), you’ve created an accurate mathematical model of that particle’s behavior. This kind of detailed analysis and modeling is
+extremely useful in engineering design and analysis of mechanical systems and interactions. (Like crash test videos.)</p>
+  <p>A <strong>Dynamic</strong> particle model is based on your knowledge of <i>dynamics</i> (force relationships).<br/>
+An <strong>Analytic</strong> particle model is based on your knowledge of <i>kinematics</i> (motion analysis).</p>
+  <p><strong>Getting started</strong><br/>To begin developing either type of model, select it from the Measurement selector pull-down menu: </p>
+  <p align="center">
+    <img src="../help_images/image27.png">
+  </p>
+  <p><strong>Using parameters</strong><br/>To make it simpler to focus on one variable at a time as you refine your models, you can also define “parameters” whose values you
+can change individually. For instance, if you think you’re dealing with a quadratic relationship between <i>y</i> position and time <i>t</i>, you can
+express that relationship in this mathematical form:</p>
+  <p style="padding-left: 50px;"><i>y</i> = A<i>t</i><sup>2</sup> + B<i>t</i> + C</p>
+  <p>So, in the modeling process, you might:</p>
+  <ul>
+    <li>define three parameters that you can experiment with and change individually: A, B, and C</li>
+    <li>define your expression for y as: A*t^2 + B*t + C</li>
+  </ul>
+  <p>You can give your parameters names containing multiple characters. In physics, for instance, the initial velocity in the <i>x</i> direction is
+generally written in equations as v<sub>x0</sub> (v with x and zero as subscripts.) To keep this parameter obvious for yourself and others, you can
+define this parameter and call it vx0. That consistent labeling makes setting up equations and debugging your models easier and more
+understandable.</p>
+  <p>Parameters must begin with a letter, but after that, they can contain numerals as well. No other symbols.</p>
+  <p>See below for detailed instructions on <a href="#dynamic" target="body">Dynamic particle models</a> and <a href="#analytic" target="body">Analytic particle models</a>. </p>
+
+  <h3><a id="dynamic" name="dynamic"></a>2. Dynamic particle models</h3>
+  <p>A <strong>Dynamic</strong> particle model is based on your knowledge of <i>dynamics</i> (force relationships).</p>
+  <p>For most physics-type applications, a Tracker dynamic model is a lot easier to design, build, and refine than an analytic model. A lot of
+the mathematics behind positioning a particle at a point in time in the video is based on a set of initial values that you’d expect to define
+for any mechanics problem. Input boxes for all of these quantities are neatly set up for you in the Model Builder Dynamic dialog:</p>
+  <ul>
+    <li>mass <i>m</i></li>
+    <li>Initial time <i>t</i> for starting the model </li>
+    <li>Initial values for four key variables at that starting time: <i>x</i>, <i>y</i>, <i>vx</i> and <i>vy</i></li>
+    <li>Expressions for force in the x and y directions, <i>fx</i> and <i>fy</i></li>
+  </ul>
+  <p>In the image below, notice the table directly above the orange Model Builder dialog. It displays five of these key variables for the Ball
+particle. Also notice that we don’t have information on velocities until t = 0.1 s. So, in order to start with known values, we decide to set
+the initial time for our model in the dialog box to be t = 0.1 s.</p>
+  <p>Completing our model definition:</p>
+  <ul>
+    <li>We’ve entered the other four “Initial Values” for the Ball particle, as shown in the second row of the table (where time = 0.1 s.)</li>
+    <li>At the top, we’ve set the mass of the ball to be 15 g (0.015 kg).</li>
+    <li>Although we’ll only use it in one place for our model definition, we’ve created a new parameter for acceleration in the y direction
+(ay) and set it to be -9.8 (acceleration of gravity).</li>
+    <li>The only acceleration on this ball is gravity, so fx is just zero. fy should look very familiar: fy = m*ay.</li>
+  </ul>
+  <p>You can see the success of this model in the image below. The model ball (yellow) matches the position of the measured ball (red) very
+well throughout its motion in the video display. Also, look at the data in the two tables below the video. Measurements for the Model (left
+table) and the Ball (right table) are very close to each other from time t = 0.1 s through 0.6 s.</p>
+  <p align="center">
+    <img src="../help_images/image28.png">
+  </p>
+
+  <h3><a id="analytic" name="analytic"></a>3. Analytic particle models</h3>
+  <p>An <strong>Analytic</strong> particle model is based on your knowledge of <i>kinematics</i> (motion analysis). </p>
+  <p>This type of model is based on recording or defining the following for a “particle”:</p>
+  <ul>
+    <li>its mass</li>
+    <li>the initial time (t<sub>0</sub>) for the model to start</li>
+    <li>an expression for its <i>x</i> position as a function of time <i>t</i></li>
+    <li>an expression for its <i>y</i> position as a function of time <i>t</i></li>
+  </ul>
+  <p>To simplify the expressions and simplify changing quantities in the model, you’ll typically want to define parameters for your model, as
+described above in <a href="#basics">Model basics</a>. (That way you can avoid typing the same number in several places every time you want to adjust
+values.)</p>
+  <p>For most “mechanics” problems, you can define the relationships for <i>x</i> and <i>y</i> position in the following way, assuming the initial time, <i>t</i><sub>0</sub>,
+is 0.0 seconds and assuming you also know the initial positions (<i>x</i><sub>0</sub> and <i>y</i><sub>0</sub>) and the initial velocities (<i>v</i><sub><i>x</i>0</sub> and <i>v</i><sub><i>y</i>0</sub>) of the particle at that
+time: </p>
+  <p style="padding-left: 50px;"><i>y</i> = <i>y</i><sub>0</sub> + <i>v</i><sub><i>y</i>0</sub><i>t</i> + ½<i>a</i><sub>y</sub>t</i><sup>2</sup></p>
+  <p style="padding-left: 50px;"><i>x</i> = <i>x</i><sub>0</sub> + <i>v</i><sub><i>x</i>0</sub><i>t</i> + ½<i>a</i><sub>x</sub>t</i><sup>2</sup></p>
+  <p>Complex, but workable if you set up parameters for all these things. Unfortunately, for many Tracker models (like the Dynamic example
+shown above) you don’t know all these parameter values at time t = 0.0 s. Then, your best bet is to start at some initial time <i>t</i><sub>0</sub> other
+than zero. That makes your equations even more complex:</p>
+  <p style="padding-left: 50px;"><i>y</i> = <i>y</i><sub>0</sub> + <i>v</i><sub><i>y</i>0</sub>(<i>t</i> - <i>t</i><sub>0</sub>) + ½<i>a</i><sub>y</sub></i>(<i>t</i> - <i>t</i><sub>0</sub>)<sup>2</sup></p>
+  <p style="padding-left: 50px;"><i>x</i> = <i>x</i><sub>0</sub> + <i>v</i><sub><i>x</i>0</sub>(<i>t</i> - <i>t</i><sub>0</sub>) + ½<i>a</i><sub>x</sub></i>(<i>t</i> - <i>t</i><sub>0</sub>)<sup>2</sup></p>
+  <p>Making this long story short: Developing an analytic model is generally harder (and more error-prone) than developing a dynamic
+model. Compare the position equations above with the simple force equations we previously developed for our <a href="#dynamic" target="body">Dynamic model</a>
+example:</p>
+  <p style="padding-left: 50px;"><i>fy</i> = <i>m</i>*<i>ay</i></p>
+  <p style="padding-left: 50px;"><i>fx</i> = 0</p>
+  <p>So, the big question is, “When would you use an analytic model?”<br/>
+The most common answer: “When you (or your teachers) want you to exercise your skill and show your mastery of kinematics!”</p>
+
+</body>
+
+</html>

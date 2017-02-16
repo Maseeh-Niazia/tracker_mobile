@@ -1,0 +1,136 @@
+@dt-splitter-size: 8px;
+
+@import './panels/panel-header.less';
+@import './panels/panel-graph.less';
+@import './panels/panel-data.less';
+@import './panels/panel-feat.less';
+
+.data-tool {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.data-tool > .dt-panel-l {
+  float: left;
+  height: calc( ~'100% - @{dt-panel-header-height}' );
+  width: calc( ~'100% - @{dt-panel-data-width} - @{dt-splitter-size}' );
+}
+
+.data-tool > .splitter.vertical {
+   height: calc( ~'100% - @{dt-panel-header-height}' );
+}
+
+.data-tool > .dt-panel-r {
+  float: right;
+  height: calc( ~'100% - @{dt-panel-header-height}' );
+  width: @dt-panel-data-width;
+}
+
+.data-tool:not(.panel-feat) > .dt-panel-l > .dt-panel-feat {
+  display: none;
+}
+
+.data-tool:not(.panel-feat) > .dt-panel-l > .splitter.horizontal {
+  display: none;
+}
+
+.data-tool:not(.panel-feat) > .dt-panel-l > .dt-panel-graph {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.data-tool > .dt-panel-l > .dt-panel-graph {
+  position: relative;
+}
+
+.data-tool > .dt-panel-l > .dt-panel-graph > .dt-panel-graph-chart {
+  padding: 15px 0 10px 10px;
+  width: calc( ~'100% - 10px' );
+  height: calc( ~'100% - 15px - 10px');
+  overflow: hidden;
+  position: relative;
+}
+
+.data-tool.panel-feat > .dt-panel-l > .dt-panel-graph {
+  overflow: hidden;
+  width: 100%;
+  height: calc( ~'100% - @{dt-panel-feat-height} - @{dt-splitter-size}' );
+}
+
+.data-tool.panel-feat > .dt-panel-l > .dt-panel-feat {
+  display: block;
+  width: 100%;
+  height: @dt-panel-feat-height;
+}
+
+.data-tool > .dt-panel-l > .dt-panel-graph > label {
+  font-family: Arial;
+  font-size: 12px;
+}
+
+.data-tool > .dt-panel-l > .dt-panel-graph > .title {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  height: 30px;
+  line-height: 30px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.data-tool > .dt-panel-l > .dt-panel-graph > .axis-x {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  height: 25px;
+  line-height: 25px;
+}
+
+.data-tool > .dt-panel-l > .dt-panel-graph > .axis-y {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.data-tool > .dt-panel-l > .dt-panel-graph {
+  > .slope,
+  > .coords {
+    position: absolute;
+    bottom: 0px;
+    background: yellow;
+    height: 16px;
+    font-family: Arial;
+    font-size: 14px;
+    display: inline-block;
+    padding: 2px 4px;
+    border: 1px solid black;
+  }
+  
+  > .slope {
+    right: 0px;
+  }
+  
+  > .coords {
+    left: 0px;
+  }
+}

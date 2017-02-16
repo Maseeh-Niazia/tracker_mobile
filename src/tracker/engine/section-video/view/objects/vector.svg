@@ -1,0 +1,10 @@
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <g class="video-object">
+    <defs>
+      <marker refY="50" refX="50" markerHeight="6" markerWidth="10" viewBox="0 0 100 100" orient="auto" markerUnits="strokeWidth" id=":arrow">
+        <path stroke-width="20" stroke="#000000" fill="none" d="m115,50l-100,40l30,-40l-30,-40z"></path>
+      </marker>
+    </defs>
+    <line x1="0" y1="0" x2="100" y2="100" stroke="red" stroke-width="2" marker-end="url(#:arrow)"></line>
+  </g>
+</svg>

@@ -1,0 +1,178 @@
+@mb-header-height: 30px;
+@mb-content-margin: 5px;
+@mb-content-background: #eeeeee;
+
+.tracker > .ccom {
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  z-index: 3000;
+  box-shadow: 1px 1px 2px grey;
+  background: #F0C869;
+  font-family: Arial;
+}
+
+/* header */
+
+.tracker > .ccom > .ccom-h {
+  width: 100%;
+  height: @mb-header-height;
+  position: relative;
+  cursor: move;
+  
+  > h1 {
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 8px 0;
+  }
+  
+  > button {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    outline: 0;
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    width: 24px;
+    height: 24px;
+    background: transparent;
+    border-radius: 24px;
+    cursor: pointer;
+  }
+  
+  > button:before {
+    font-family: 'Tracker Icons';
+    content: 'a';
+    font-size: 22px;
+    font-weight: normal;
+  }
+  
+  button:hover:before {
+    color: indianred;
+  }
+}
+
+/* content */
+
+.tracker > .ccom > .ccom-c {
+  background: @mb-content-background;
+  margin: 5px;
+  width: calc(~'100% - @{mb-content-margin} - @{mb-content-margin}');
+  height: calc(~'100% - @{mb-content-margin} - @{mb-content-margin} - @{mb-header-height}');
+  overflow: hidden;
+  min-height: 220px;
+}
+
+/* panel */
+
+.tracker > .ccom > .ccom-c .ccom-panel {
+  margin: 2px;
+  padding: 2px;
+  margin-top: 10px;
+  padding-top: 10px;
+  border: 1px solid grey;
+  border-radius: 4px;
+  text-align: left;
+  position: relative;
+  font-size: 12px;
+  position: relative;
+  
+  &:before {
+    content: attr(name);
+    position: absolute;
+    font-size: 14px;
+    padding: 2px 4px;
+    background: @mb-content-background;
+    top: -10px;
+    left: 10px;
+    border-radius: 4px;
+  }
+  
+  > input {
+    outline: none;
+    margin-left: 10px;
+    font-size: 14px;
+    padding: 0 4px;
+    width: 150px;
+    
+    &.wrong {
+      background: rgba(255,0,0,0.3);
+    }
+  }
+  
+  > button {
+    float: right;
+    margin-right: 5px;
+  }
+
+  > .warning {
+    margin-top: 2px;
+    color: red;
+  }
+}
+
+.tracker > .ccom > .ccom-c .ccom-panel.points > label {
+  display: block;
+  position: relative;
+  padding-left: 14px;
+  width: calc( ~'100% - 14px' );
+  height: 20px;
+  line-height: 20px;
+  
+  &.checked:before {
+    font-size: 16px;
+    content: '✓';
+    position: absolute;
+    left: 5px;
+  }
+  
+  &:not(.disabled):hover {
+    background: #c3c3c3;
+    cursor: pointer;
+  }
+  
+  > i {
+    vertical-align: middle;
+    display: inline-block;
+    width: 20px;
+    text-align: center;
+  }
+  
+  > i:before {
+    font-family: 'Panel Controls Icon';
+    font-size: 14px;
+    font-style: normal;
+    position: relative;
+  }
+  
+  > i[element="point"]:before {
+    content: 'g';
+    top: 1px;
+  }
+  
+  > i[element="vector"]:before {
+   content: 'f';
+   top: 1px;
+  }
+}
+
+.tracker > .ccom > .ccom-c > button {
+  outline: none;
+  background: none;
+  border: 0;
+  margin: 2px;
+  font-size: 16px;
+  border: 1px solid #c3c3c3;
+  
+  &:disabled {
+    opacity: 0.5
+  }
+  
+  &:not(:disabled):hover {
+    cursor: pointer;
+    box-shadow: 0 0 2px 2px #c3c3c3;
+  }
+}

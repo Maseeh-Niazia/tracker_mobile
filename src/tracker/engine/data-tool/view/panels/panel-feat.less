@@ -1,0 +1,199 @@
+@dt-panel-feat-row-height: 32px;
+@dt-panel-feat-right-width: 200px;
+@dt-panel-feat-height: 3 * @dt-panel-feat-row-height;
+
+@dt-panel-feat-row-padding: 10px;
+@dt-panel-feat-label-width: 100px;
+@dt-panel-feat-bttn-fit-auto-width: 60px;
+@dt-panel-feat-bttn-fit-builder-width: 80px;
+@dt-panel-feat-bttn-margin: 10px;
+
+.data-tool > .dt-panel-l > .dt-panel-feat > .splitter.vertical {
+   height: 100%;
+}
+
+.data-tool > .dt-panel-l > .dt-panel-feat > .dt-panel-r {
+  float: right;
+  height: 100%;
+  width: @dt-panel-feat-right-width;
+}
+
+.data-tool > .dt-panel-l > .dt-panel-feat > .dt-panel-l {
+  float: left;
+  height: 100%;
+  width: calc( ~'100% - @{dt-panel-feat-right-width} - @{dt-splitter-size}' );
+  text-align: left;
+}
+
+/* rows */
+
+.data-tool > .dt-panel-l > .dt-panel-feat > .dt-panel-l > .dt-panel-row {
+  border: 1px solid #a6a6a6;
+  width: calc( '100% - 2px' );
+  height: @dt-panel-feat-row-height - 3px;
+  padding: 0 @dt-panel-feat-row-padding;
+  background: -moz-linear-gradient(top, #ffffff 0%, #dddddd 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#dddddd)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #ffffff 0%,#dddddd 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #ffffff 0%,#dddddd 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, #ffffff 0%,#dddddd 100%); /* IE10+ */
+  background: linear-gradient(to bottom, #ffffff 0%,#dddddd 100%); /* W3C */
+  position: relative;
+}
+
+.data-tool > .dt-panel-l > .dt-panel-feat > .dt-panel-l > .dt-panel-row:not(:first-child) {
+  margin-top: 1px;
+}
+
+.data-tool .dt-panel-feat .dt-panel-row > button {
+  margin-top: 5px;
+  padding: 0;
+  text-align: center;
+  vertical-align: top;
+  outline: none;
+  border: 0;
+  height: 20px;
+  background: transparent;
+  cursor: pointer;
+  margin-left: @dt-panel-feat-bttn-margin;
+}
+
+.data-tool .dt-panel-feat .dt-panel-row > button:hover {
+  box-shadow: 0 0 1px 1px grey;
+}
+
+.data-tool .dt-panel-feat .dt-panel-row > button[name="fit-auto"] {
+  width: @dt-panel-feat-bttn-fit-auto-width;
+}
+
+.data-tool .dt-panel-feat .dt-panel-row > button[name="fit-builder"] {
+  width: @dt-panel-feat-bttn-fit-builder-width;
+}
+
+.data-tool .dt-panel-feat .dt-panel-row > label {
+  font-family: Arial;
+  font-size: 14px;
+  vertical-align: top;
+  margin-top: 8px;
+  display: inline-block;
+  width: @dt-panel-feat-label-width;
+}
+
+.data-tool .dt-panel-feat .dt-panel-row > label + label {
+  display: inline-block;
+  width: calc( ~'100% - @{dt-panel-feat-label-width} - 2px' );
+  height: 20px;
+  background: #fff;
+  border: 1px solid #7a8a99;
+  vertical-align: top;
+  margin-top: 4px;
+}
+
+.data-tool .dt-panel-feat .dt-panel-row > label + label > span,
+.data-tool .dt-panel-feat .dt-panel-row > label + button > span {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 6px;
+  height: 14px;
+}
+
+.data-tool .dt-panel-feat .dt-panel-row > label + .fit-name-value {
+  width: calc( ~'100% - @{dt-panel-feat-label-width} - 2px - @{dt-panel-feat-bttn-fit-auto-width} - @{dt-panel-feat-bttn-fit-builder-width} - @{dt-panel-feat-bttn-margin} - @{dt-panel-feat-bttn-margin}' );
+  cursor: pointer;
+  position: relative;
+  margin: 0;
+  margin-top: 4px;
+  background: #fff;
+  border: 1px solid #7a8a99;
+  height: 22px;
+  text-align: left;
+}
+
+.data-tool .dt-panel-feat .dt-panel-row > label + .fit-name-value:after {
+  font-family: 'Tracker Icons';
+  font-size: 18px;
+  float: right;
+  content: 'b';
+}
+
+/* table */
+
+.data-tool .dt-panel-feat .dt-feat-parametrs {
+  font-family: Arial;
+  font-size: 12px;
+  width: 100%;
+  background: #eee;
+  border-collapse: collapse;
+}
+
+.data-tool .dt-panel-feat .dt-feat-parametrs > thead {
+  color: blue;
+}
+
+.data-tool .dt-panel-feat .dt-feat-parametrs > thead > tr > td {
+  border-bottom: 1px solid #7a8a99;
+  width: 50%;
+  padding: 2px 0;
+  margin: 0;
+}
+
+.data-tool .dt-panel-feat .dt-feat-parametrs > thead > tr > td:first-child {
+  border-right: 1px solid #7a8a99;
+}
+
+.data-tool .dt-panel-feat .dt-feat-parametrs > tbody > tr > td {
+  border-bottom: 1px solid blue;
+  padding: 0;
+  margin: 0;
+}
+
+.data-tool .dt-panel-feat .dt-feat-parametrs > tbody > tr > td:first-child {
+  border-right: 1px solid blue;
+}
+
+.data-tool .dt-panel-feat .dt-feat-parametrs > tbody > tr > td > input {
+  width: calc( ~'100% - 2px' );
+  outline: none;
+  border: 0;
+  padding-left: 4px;
+}
+
+.data-tool .dt-panel-feat .dt-feat-parametrs > tbody > tr > td > input:disabled {
+  background: #fff;
+}
+
+/* drop-down menu */
+
+.data-tool .dt-panel-feat .fit-name-value > .dt-panel-row-menu {
+  position: absolute;
+  bottom: 22px;
+  left: -1px;
+  min-height: 20px;
+  width: 100%;
+  background: #eeeeee;
+  display: inline-block;
+  box-shadow: 1px 1px 2px grey;
+  padding: 2px 0;
+  z-index: 10;
+  border: 1px solid #7a8a99;
+  cursor: default;
+  text-align: left;
+}
+
+.data-tool .dt-panel-feat .fit-name-value > .dt-panel-row-menu > button {
+  width: 100%;
+  display: list-item;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  background: none;
+  border: 0;
+  outline: 0;
+  padding: 4px 6px;
+  color: #3c3c3c;
+  cursor: pointer;
+}
+
+.data-tool .dt-panel-feat .fit-name-value > .dt-panel-row-menu > button:hover {
+  background: #a3b8cc;
+}

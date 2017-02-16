@@ -1,0 +1,206 @@
+@tcb-header-height: 30px;
+@tcb-content-margin: 5px;
+@tcb-content-background: #eeeeee;
+@tcb-panel-buttons-height: 26px;
+
+.tracker > .tcs {
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  z-index: 3000;
+  box-shadow: 1px 1px 2px grey;
+  background: #F0C869;
+  font-family: Arial;
+}
+
+/* header */
+
+.tracker > .tcs > .tcs-h {
+  width: 100%;
+  height: @tcb-header-height;
+  position: relative;
+  cursor: move;
+}
+
+.tracker > .tcs > .tcs-h > h1 {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 8px 0;
+}
+
+.tracker > .tcs > .tcs-h > button {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  outline: 0;
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  width: 24px;
+  height: 24px;
+  background: transparent;
+  border-radius: 24px;
+  cursor: pointer;
+}
+
+.tracker > .tcs > .tcs-h > button:before {
+  font-family: 'Tracker Icons';
+  content: 'a';
+  font-size: 22px;
+  font-weight: normal;
+}
+
+.tracker > .tcs > .tcs-h > button:hover:before {
+  color: indianred;
+}
+
+/* content */
+
+.tracker > .tcs > .tcs-c {
+  background: @tcb-content-background;
+  margin: @tcb-content-margin;
+  width: calc(~'100% - @{tcb-content-margin} - @{tcb-content-margin}');
+  height: calc(~'100% - @{tcb-content-margin} - @{tcb-content-margin} - @{tcb-header-height}');
+  overflow: hidden;
+}
+
+/* panel */
+
+.tracker > .tcs > .tcs-c .tcs-panel {
+  margin: 2px;
+  padding: 2px;
+  padding-top: 10px;
+  border: 1px solid grey;
+  border-radius: 4px;
+  text-align: left;
+  position: relative;
+  font-size: 14px;
+}
+
+.tracker > .tcs > .tcs-c .tcs-panel.model {
+  padding: 5px;
+  font-weight: bold;
+}
+
+.tracker > .tcs > .tcs-c .tcs-panel.model > span:last-child {
+  float: right;
+}
+
+.tracker > .tcs > .tcs-c .tcs-panel[name] {
+  margin-top: 10px;
+  height: calc(~'100% - @{tcb-header-height}');
+}
+
+.tracker > .tcs > .tcs-c .tcs-panel[name]:before {
+  content: attr(name);
+  background: @tcb-content-background;
+  text-align: left;
+  display: inline-block;
+  font-size: 14px;
+  position: absolute;
+  top: -8px;
+  left: 10px;
+  padding: 0 4px;
+  font-weight: bold;
+}
+
+/* panel selectors */
+
+.tracker > .tcs > .tcs-c .tcs-panel > .tcs-panel-selectors {
+  width: 100%;
+  height: calc(~'100% - @{tcb-panel-buttons-height} - 2*@{tcb-content-margin}');
+  line-height: 30px;
+}
+
+.tracker > .tcs > .tcs-c .tcs-panel > .tcs-panel-selectors > label {
+  margin-right: 10px;
+  width: 48px;
+  display: inline-block;
+  cursor: pointer;
+  line-height: 26px;
+  
+  > input {
+    cursor: pointer;
+    outline: none;
+    vertical-align: middle;
+  }
+  
+  > span {
+    line-height: 16px;
+    vertical-align: middle;
+  }
+  
+  > span.index-x:after,
+  > span.index-y:after {
+    font-family: Arial;
+    font-size: 10px;
+    position: relative;
+    top: 4px;
+  }
+  
+  > span.index-x:after {
+    content: 'x';
+  }
+  
+  > span.index-y:after {
+    content: 'y';
+  }
+}
+
+.tracker > .tcs > .tcs-c .tcs-panel > .tcs-panel-selectors > label:hover {
+  background: #cccccc;
+  border-radius: 6px;
+}
+
+
+/* panel butons */
+
+.tracker > .tcs > .tcs-c .tcs-panel > .tcs-panel-buttons {
+  text-align: center;
+}
+
+.tracker > .tcs > .tcs-c .tcs-panel > .tcs-panel-buttons > button {
+  margin: @tcb-content-margin;
+  cursor: pointer;
+  border: 1px solid #7a8a99;
+  height: @tcb-panel-buttons-height;
+  padding: 2px 10px;
+  outline: none;
+  font-weight: bold;
+  background: -moz-linear-gradient(top, #e2ebf5 0%, #ffffff 34%, #bed3e7 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #e2ebf5), color-stop(34%, #ffffff), color-stop(100%, #bed3e7)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #e2ebf5 0%, #ffffff 34%, #bed3e7 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #e2ebf5 0%, #ffffff 34%, #bed3e7 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, #e2ebf5 0%, #ffffff 34%, #bed3e7 100%); /* IE10+ */
+  background: linear-gradient(to bottom, #e2ebf5 0%, #ffffff 34%, #bed3e7 100%); /* W3C */
+}
+
+.tracker > .tcs > .tcs-c .tcs-panel > .tcs-panel-buttons > button:hover {
+  box-shadow: inset 0 0 1px 2px #b8cfe5;
+}
+
+.tracker > .tcs > .tcs-c .tcs-panel > .tcs-panel-buttons > button:disabled {
+  cursor: default;
+  background: #eeeeee;
+  border: 1px solid #999999;
+  color: #999999;
+}
+
+.tracker > .tcs > .tcs-c .tcs-panel > .tcs-panel-buttons > button:disabled:hover {
+  box-shadow: none;
+}
+
+/* panel cover with scroll */
+
+.tracker > .tcs > .tcs-c > .tcs-panel-cover {
+  width: 100%;
+  height: calc(~'100% - @{tcb-content-margin} - @{tcb-content-margin} - @{tcb-header-height}');
+  padding-bottom: 2px;
+  margin-bottom: 4px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  border-top: 2px solid #7a8a99;
+  border-bottom: 2px solid #7a8a99;
+}

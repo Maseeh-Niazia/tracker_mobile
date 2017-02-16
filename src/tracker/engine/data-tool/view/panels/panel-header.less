@@ -1,0 +1,108 @@
+@dt-panel-header-height: 34px;
+@dt-panel-header-bttn-toggle-margin: 5px;
+
+.data-tool > .dt-panel-header {
+  width: 100%;
+  height: @dt-panel-header-height - 1px;
+  font-family: Arial;
+  text-align: left;
+  position: relative;
+  border-bottom: 1px solid grey;
+  background: -moz-linear-gradient(top, #ffffff 0%, #dddddd 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#dddddd)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #ffffff 0%,#dddddd 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #ffffff 0%,#dddddd 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, #ffffff 0%,#dddddd 100%); /* IE10+ */
+  background: linear-gradient(to bottom, #ffffff 0%,#dddddd 100%); /* W3C */
+}
+
+.data-tool > .dt-panel-header > h1 {
+  vertical-align: middle;
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+  color: #000;
+  font-size: 18px;
+  font-weight: bold;
+  margin-left: 10px;
+  position: relative;
+  top: 8px;
+}
+
+.data-tool > .dt-panel-header > h5 {
+  vertical-align: middle;
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+  float: right;
+  margin-right: 10px;
+  height: @dt-panel-header-height;
+}
+
+
+/* splitter */
+
+.data-tool > .dt-panel-header .splitter {
+  display: inline-block;
+  background: url('../images/splitter-header.gif');
+  width: 2px;
+  height: 20px;
+}
+
+/* button close */
+
+.data-tool > .dt-panel-header button.bttn-data-tool-close {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  outline: none;
+  width: @dt-panel-header-height;
+  height: @dt-panel-header-height;
+  background: transparent;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.data-tool > .dt-panel-header button.bttn-data-tool-close:before {
+  font-family: 'Tracker Icons';
+  content: 'a';
+  font-size: 22px;
+  font-weight: normal;
+  position: relative;
+  top: 1px;
+}
+
+.data-tool > .dt-panel-header button.bttn-data-tool-close:hover:before {
+  color: indianred;
+}
+
+/* toggle buttons */
+
+.data-tool > .dt-panel-header .bttn-toggle,
+.data-tool > .dt-panel-header a {
+  background: transparent;
+  border: 0;
+  padding: 0 10px;
+  margin: @dt-panel-header-bttn-toggle-margin;
+  outline: 0;
+  vertical-align: top;
+  display: inline-block;
+  height: @dt-panel-header-height - 2 * @dt-panel-header-bttn-toggle-margin;
+  line-height: @dt-panel-header-height - 2 * @dt-panel-header-bttn-toggle-margin;
+  cursor: pointer;
+  color: #000;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.data-tool > .dt-panel-header .bttn-toggle.selected:hover,
+.data-tool > .dt-panel-header .bttn-toggle:hover,
+.data-tool > .dt-panel-header a:hover {
+  box-shadow: 0 0 1px 1px grey;
+}
+
+.data-tool > .dt-panel-header .bttn-toggle.selected {
+  background: #face8d;
+  box-shadow: inset 0 0 1px 1px #e09500;
+}
